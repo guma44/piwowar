@@ -1,4 +1,41 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<md-sidenav-container class="container">
+  <md-sidenav #sidenav class="sidenav" mode="push">
+    <md-toolbar color="primary">
+      <div>
+        <div>Firstname Lastname</div>
+        <div>email@domainname.com</div>
+      </div>
+    </md-toolbar>
+    <md-list>
+      <md-list-item>
+        <md-icon md-list-icon>dashboard</md-icon>
+        <h4 md-line>Dashboard</h4>
+      </md-list-item>
+      <md-list-item>
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Brewlog</h4>
+      </md-list-item>
+      <md-list-item>
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Recipes</h4>
+      </md-list-item>
+      <md-list-item>
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Warehouse</h4>
+      </md-list-item>
+      <md-divider></md-divider>
+      <h3 md-subheader>Management</h3>
+      <md-list-item>
+        <md-icon md-list-icon>settings</md-icon>
+        <h4 md-line>Settings</h4>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <div class="sidenav-content">
+    <button md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
