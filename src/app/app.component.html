@@ -1,7 +1,7 @@
 <md-sidenav-container class="container">
-  <md-sidenav #sidenav class="sidenav" mode="push">
-    <md-toolbar color="primary">
-      <span>Piwowar</span>    
+  <md-sidenav #sidenav class="sidenav" mode="side">
+    <md-toolbar color="accent">
+      <span>Piwowar</span>
       <md-toolbar-row>
         <div>
           <div>Firstname Lastname</div>
@@ -10,25 +10,25 @@
       </md-toolbar-row>
     </md-toolbar>
     <md-nav-list>
-      <a md-list-item href="#">
+      <a md-list-item [routerLink]="['/dashboard']">
         <md-icon md-list-icon>dashboard</md-icon>
         <h4 md-line>Dashboard</h4>
       </a>
-      <a md-list-item href="#">
+      <a md-list-item [routerLink]="['/brewlog']">
         <md-icon md-list-icon>label</md-icon>
         <h4 md-line>Brewlog</h4>
       </a>
-      <a md-list-item href="#">
+      <a md-list-item [routerLink]="['/recipes']">
         <md-icon md-list-icon>label</md-icon>
         <h4 md-line>Recipes</h4>
       </a>
-      <a md-list-item href="#">
+      <a md-list-item [routerLink]="['/warehouse']">
         <md-icon md-list-icon>label</md-icon>
         <h4 md-line>Warehouse</h4>
       </a>
       <md-divider></md-divider>
       <h3 md-subheader>Management</h3>
-      <a md-list-item href="#">
+      <a md-list-item [routerLink]="['/settings']">
         <md-icon md-list-icon>settings</md-icon>
         <h4 md-line>Settings</h4>
       </a>
@@ -37,7 +37,7 @@
 
   <div class="sidenav-content">
     <md-toolbar color="primary">
-      <button md-icon-button (click)="sidenav.open()" style="cursor:pointer">
+      <button md-icon-button (click)="sidenav.toggle()" style="cursor:pointer">
         <md-icon class="md-24" >menu</md-icon>
       </button>
       <span>Piwowar</span>

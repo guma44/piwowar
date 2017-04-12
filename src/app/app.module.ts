@@ -6,11 +6,16 @@ import { HttpModule } from '@angular/http';
 
 import { PiwowarMaterialModule } from './piwowar-material.module';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipesModule } from './recipes/recipes.module';
+import { BrewlogModule } from './brewlog/brewlog.module';
+import { WarehouseModule } from './warehouse/warehouse.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,10 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PiwowarMaterialModule
+    PiwowarMaterialModule,
+    RecipesModule,
+    BrewlogModule,
+    WarehouseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
