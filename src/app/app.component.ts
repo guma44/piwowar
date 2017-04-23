@@ -5,6 +5,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/filter';
 
+class Breadcrumb {
+  constructor(public label: string, public url: string){}
+}
 
 @Component({
   selector: 'pw-root',
@@ -13,18 +16,19 @@ import 'rxjs/add/operator/filter';
 })
 export class AppComponent implements OnInit {
   name = "Piwowar";
-  breadcrumbs: Array<Object>;
+  breadcrumbs: Array<Breadcrumb>;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
   ) {}
   ngOnInit() {
+    console.log(this.activatedRoute.snapshot.root);
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe(event => {
         let root: ActivatedRoute = this.activatedRoute.root;
         this.breadcrumbs = this.getBreadcrumbs(root);
-        console.log(this.breadcrumbs);
+        this.name = this.breadcrumbs[0].label;
       });
   }
 
