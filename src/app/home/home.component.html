@@ -1,0 +1,16 @@
+<md-toolbar color="primary">
+  <div class="home-toolbar">
+    <div class="toolbar-left-side">
+      <span>Home</span>
+    </div>
+    <div class="toolbar-right-side">
+      <button md-button [routerLink]="['/signup']">
+        Sign up
+      </button>
+      <button md-button [routerLink]="['/signin']">
+        Sign in
+      </button>
+    </div>
+  </div>
+</md-toolbar>
+<router-outlet></router-outlet>

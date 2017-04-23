@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdSidenavModule, MdToolbarModule, MdListModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MdSidenavModule, MdToolbarModule, MdListModule, MdIconModule,
+         MdButtonModule, MdInputModule, MdCardModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -9,14 +10,18 @@ import { MdSidenavModule, MdToolbarModule, MdListModule, MdIconModule, MdButtonM
     MdToolbarModule,
     MdListModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    MdCardModule,
+    MdInputModule
   ],
   exports: [
     MdSidenavModule,
     MdToolbarModule,
     MdListModule,
     MdIconModule,
-    MdButtonModule
+    MdButtonModule,
+    MdCardModule,
+    MdInputModule
   ],
 })
 export class PiwowarMaterialModule { }

@@ -1,0 +1,47 @@
+<md-sidenav-container class="container">
+  <md-sidenav #sidenav class="sidenav" mode="side">
+    <md-toolbar color="primary">
+      <span>Piwowar</span>
+      <md-toolbar-row>
+        <div>
+          <div>Firstname Lastname</div>
+          <div>email@domainname.com</div>
+        </div>
+      </md-toolbar-row>
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item [routerLink]="['/piwowar/dashboard']" routerLinkActive="active">
+        <md-icon md-list-icon>dashboard</md-icon>
+        <h4 md-line>Dashboard</h4>
+      </a>
+      <a md-list-item [routerLink]="['/piwowar/brewlog']" routerLinkActive="active">
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Brewlog</h4>
+      </a>
+      <a md-list-item [routerLink]="['/piwowar/recipes']" routerLinkActive="active">
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Recipes</h4>
+      </a>
+      <a md-list-item [routerLink]="['/piwowar/inventory']" routerLinkActive="active">
+        <md-icon md-list-icon>label</md-icon>
+        <h4 md-line>Inventory</h4>
+      </a>
+      <md-divider></md-divider>
+      <h3 md-subheader>Management</h3>
+      <a md-list-item [routerLink]="['/piwowar/settings']" routerLinkActive="active">
+        <md-icon md-list-icon>settings</md-icon>
+        <h4 md-line>Settings</h4>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <div class="sidenav-content">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.toggle()" style="cursor:pointer">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+      <span> {{ name }}</span>
+    </md-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

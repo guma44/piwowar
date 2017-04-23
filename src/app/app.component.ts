@@ -15,6 +15,7 @@ class Breadcrumb {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  isUserSignedIn: boolean = true;
   name = "Piwowar";
   breadcrumbs: Array<Breadcrumb>;
   constructor(
