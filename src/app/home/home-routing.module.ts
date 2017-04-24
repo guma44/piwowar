@@ -6,10 +6,11 @@ import { HomeComponent } from './home.component';
 import { StartComponent } from './start/start.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, data: {breadcrumb: "Home"}, children: [
-  {path: 'start', component: StartComponent, data: {breadcrumb: "Start"}},
-  {path: 'signup', component: SignupComponent, data: {breadcrumb: "Sign In"}},
-  {path: 'signin', component: SigninComponent, data: {breadcrumb: "Sign Up"}}]}
+  {path: '', component: HomeComponent, data: {breadcrumb: "Home"},
+    children: [
+      {path: '', component: StartComponent, data: {breadcrumb: "Start"}},
+      {path: 'signup', component: SignupComponent, data: {breadcrumb: "Sign In"}},
+      {path: 'signin', component: SigninComponent, data: {breadcrumb: "Sign Up"}}]}
 ];
 
 @NgModule({

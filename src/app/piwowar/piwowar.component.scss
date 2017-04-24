@@ -9,3 +9,9 @@
 md-sidenav {
   border-right: 1px solid #e1e1e1;
 }
+
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

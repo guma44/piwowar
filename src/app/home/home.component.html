@@ -1,17 +1,20 @@
 <md-toolbar color="primary">
+  <div><h4>Piwowar</h4></div>
   <div class="home-toolbar">
-    <div class="toolbar-left-side">
-        Piwowar
-    </div>
-    <div class="toolbar-right-side">
-      <button md-button [routerLink]="['/signup']">
-        Sign up
-      </button>
-      <button md-button [routerLink]="['/signin']">
-        Sign in
+    <div class="right-side"></div>
+    <div class="left-side">
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+        <button md-button [routerLink]="['/signup']">
+          Register
+        </button>
+        <button md-button [routerLink]="['/signin']">
+          Login
+        </button>
+      </ng-template>
+      <button md-button [routerLink]="['/piwowar/dashboard']" *ngIf="authService.isAuthenticated()">
+        Dashboard
       </button>
     </div>
   </div>
 </md-toolbar>
-<router-outlet>
-</router-outlet>
+<router-outlet></router-outlet>
