@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/filter';
+import * as firebase from 'firebase';
 
 class Breadcrumb {
   constructor(public label: string, public url: string){}
@@ -23,7 +24,10 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
   ) {}
   ngOnInit() {
-    console.log(this.activatedRoute.snapshot.root);
+    firebase.initializeApp({
+      apiKey: "AIzaSyCNXNSgfNDS2DfT9I_vQ6CENiu0wWYhYkk",
+      authDomain: "piwowar-fe7a3.firebaseapp.com",
+    });
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .subscribe(event => {

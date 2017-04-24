@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { PiwowarModule } from './piwowar/piwowar.module';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { AppComponent } from './app.component';
     PiwowarModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
