@@ -1,31 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import * as firebase from 'firebase';
+import { AngularFire, FirebaseAuthState } from 'angularfire2';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class AuthService {
 
-  token: string;
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, public af: AngularFire) {}
 
   signUpUser(email: string, password: string){
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    this.af.auth.createUser({email, password})
+      .then(
+        (user) => console.log(`Create User Success:`, user)
+      )
       .catch(
-        (error) => console.log(error)
+        (error) => console.error(`Create User Failure:`, error)
       );
   }
 
   signInUser(email: string, password: string){
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    this.af.auth.login({email, password})
       .then(
-        (response) => {
+        (user) => {
           this.router.navigate(["/piwowar", "dashboard"]);
-          firebase.auth().currentUser.getToken()
-            .then(
-              (token: string) => this.token = token
-            );
         }
       )
       .catch(
@@ -34,23 +33,7 @@ export class AuthService {
   }
 
   signOutUser() {
-    firebase.auth().signOut();
-    this.token = null;
+    this.af.auth.logout();
     this.router.navigate(["/"]);
   }
-
-  getToken() {
-    return firebase.auth().currentUser.getToken()
-      .then(
-        (token: string) => this.token = token
-      );
-  }
-
-  getUserName() {
-  }
-
-  isAuthenticated() {
-    return this.token != null;
-  }
-
 }

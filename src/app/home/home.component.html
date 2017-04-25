@@ -3,7 +3,7 @@
   <div class="home-toolbar">
     <div class="right-side"></div>
     <div class="left-side">
-      <ng-template [ngIf]="!authService.isAuthenticated()">
+      <ng-template [ngIf]="!(authService.af.auth | async)">
         <button md-button [routerLink]="['/signup']">
           Register
         </button>
@@ -11,9 +11,14 @@
           Login
         </button>
       </ng-template>
-      <button md-button [routerLink]="['/piwowar/dashboard']" *ngIf="authService.isAuthenticated()">
-        Dashboard
-      </button>
+      <ng-template [ngIf]="authService.af.auth | async">
+        <button md-button (click)="onLogout()">
+          Logout
+        </button>
+        <button md-button md-icon-button [routerLink]="['/piwowar/dashboard']" >
+          <md-icon class="md-24" >dashboard</md-icon>
+        </button>
+      </ng-template>
     </div>
   </div>
 </md-toolbar>

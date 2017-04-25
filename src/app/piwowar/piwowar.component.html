@@ -44,7 +44,7 @@
       <div class="app-toolbar">
         <div class="left-side"></div>
         <div class="right-side">
-          <button md-button (click)="onLogout()" style="cursor:pointer" *ngIf="authService.isAuthenticated()">
+          <button md-button (click)="onLogout()" style="cursor:pointer" *ngIf="authService.af.auth | async">
             Logout
           </button>
           <button md-button  md-icon-button style="cursor:pointer" [routerLink]="['/']">
