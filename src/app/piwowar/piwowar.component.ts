@@ -18,8 +18,7 @@ class Breadcrumb {
 })
 export class PiwowarComponent implements OnInit {
 
-
-  isUserSignedIn: boolean = true;
+  user: any = {email: ""};
   name = "Piwowar";
   breadcrumbs: Array<Breadcrumb>;
 
@@ -38,6 +37,12 @@ export class PiwowarComponent implements OnInit {
           this.name = this.breadcrumbs[2].label;
         }
       });
+
+    this.authService.af.auth.subscribe(user => {
+      if (user){
+        this.user.email = user.auth.email;
+      }
+    })
   }
 
   getBreadcrumbs(root: ActivatedRoute){

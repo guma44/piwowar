@@ -8,7 +8,8 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class AuthService {
 
-  constructor(private router: Router, public af: AngularFire) {}
+  constructor(private router: Router, public af: AngularFire) {
+  }
 
   signUpUser(email: string, password: string){
     this.af.auth.createUser({email, password})

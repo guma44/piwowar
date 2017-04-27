@@ -1,13 +1,11 @@
 <md-sidenav-container class="container">
   <md-sidenav #sidenav class="sidenav" mode="side">
     <md-toolbar color="primary">
-      <span>Piwowar</span>
-      <md-toolbar-row>
+      <!-- <span>Piwowar</span> -->
         <div>
-          <div>Firstname Lastname</div>
-          <div>email@domainname.com</div>
+          <!-- <div>Firstname Lastname</div> -->
+          <div>{{ user.email }}</div>
         </div>
-      </md-toolbar-row>
     </md-toolbar>
     <md-nav-list>
       <a md-list-item [routerLink]="['/piwowar/dashboard']" routerLinkActive="active">
