@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseListObservable } from 'angularfire2';
+
+import { IngredientsService } from '../../shared/services/ingredients.service';
 
 @Component({
   selector: 'pw-inventory',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
   }

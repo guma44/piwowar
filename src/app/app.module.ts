@@ -11,6 +11,7 @@ import { PiwowarModule } from './piwowar/piwowar.module';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './auth/auth.service';
+import { IngredientsService } from './shared/services/ingredients.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCNXNSgfNDS2DfT9I_vQ6CENiu0wWYhYkk",
@@ -41,7 +42,7 @@ const myFirebaseAuthConfig = {
     PiwowarModule,
     AuthModule,
   ],
-  providers: [AuthService, FIREBASE_PROVIDERS],
+  providers: [AuthService, IngredientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

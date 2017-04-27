@@ -1,0 +1,47 @@
+<div class="filter-box" style="padding:10px;">
+  <md-input-container style="width: 100%">
+    <input mdInput placeholder="Filter" type="text" name="filter_by">
+    <span mdPrefix><md-icon class="md-24">search</md-icon></span>
+  </md-input-container>
+</div>
+<md-tab-group dynamicHeight>
+  <md-tab>
+    <ng-template md-tab-label>
+      Fermentables
+    </ng-template>
+    <md-nav-list style="margin: 20px;">
+       <a class="list-item" md-list-item *ngFor="let fermentable of fermentables">
+         <span md-line>{{ fermentable.name }}</span>
+         <span md-line class="list-second-line">{{ fermentable.origin }} | {{ fermentable.ftype }}</span>
+       </a>
+    </md-nav-list>
+  </md-tab>
+  <md-tab>
+    <ng-template md-tab-label>
+      Hops
+    </ng-template>
+    <md-nav-list style="margin: 20px;">
+       <a class="list-item" md-list-item *ngFor="let hop of hops">
+         <span md-line>{{ hop.name }}</span>
+         <span md-line class="list-second-line">{{ hop.origin }} | {{ hop.htype }}</span>
+       </a>
+    </md-nav-list>
+  </md-tab>
+  <md-tab>
+    <ng-template md-tab-label>
+      Yeast
+    </ng-template>
+    <md-nav-list style="margin: 20px;">
+       <a class="list-item" md-list-item *ngFor="let yeast_item of yeast">
+         <span md-line>{{ yeast_item.name }}</span>
+         <span md-line class="list-second-line">{{ yeast_item.ytype }} | {{ yeast_item.form }}</span>
+       </a>
+    </md-nav-list>
+  </md-tab>
+  <!-- <md-tab>
+    <ng-template md-tab-label>
+      Add-ons
+    </ng-template>
+    <p>...</p>
+  </md-tab> -->
+</md-tab-group>

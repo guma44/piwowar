@@ -23,11 +23,15 @@
         <h4 md-line>Recipes</h4>
       </a>
       <a md-list-item [routerLink]="['/piwowar/inventory']" routerLinkActive="active">
-        <md-icon md-list-icon>label</md-icon>
+        <md-icon md-list-icon>storage</md-icon>
         <h4 md-line>Inventory</h4>
       </a>
       <md-divider></md-divider>
       <h3 md-subheader>Management</h3>
+      <a md-list-item [routerLink]="['/piwowar/ingredients']" routerLinkActive="active">
+        <md-icon md-list-icon>storage</md-icon>
+        <h4 md-line>Ingredients</h4>
+      </a>
       <a md-list-item [routerLink]="['/piwowar/settings']" routerLinkActive="active">
         <md-icon md-list-icon>settings</md-icon>
         <h4 md-line>Settings</h4>

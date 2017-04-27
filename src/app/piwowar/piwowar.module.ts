@@ -9,6 +9,7 @@ import { InventoryModule } from './inventory/inventory.module';
 import { SettingsModule } from './settings/settings.module';
 import { PiwowarComponent } from './piwowar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 
 @NgModule({
@@ -21,6 +22,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     InventoryModule,
     SettingsModule
   ],
-  declarations: [PiwowarComponent, DashboardComponent]
+  declarations: [PiwowarComponent, DashboardComponent, IngredientsComponent]
 })
 export class PiwowarModule { }

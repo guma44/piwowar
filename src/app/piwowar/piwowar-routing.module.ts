@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 import { PiwowarComponent } from './piwowar.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent, data: {breadcrumb: "Dashboard"}},
     {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule', data: {breadcrumb: "Recipes"}},
     {path: 'inventory', loadChildren: './inventory/inventory.module#InventoryModule', data: {breadcrumb: "Inventory"}},
+    {path: 'ingredients', component: IngredientsComponent, data: {breadcrumb: "Ingredients"}},
     {path: 'settings', loadChildren: './settings/settings.module#SettingsModule', data: {breadcrumb: "Settings"}},
     {path: 'brewlog', loadChildren: './brewlog/brewlog.module#BrewlogModule', data: {breadcrumb: "Brewlog"}}
   ]}
